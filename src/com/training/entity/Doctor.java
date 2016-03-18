@@ -1,6 +1,7 @@
 package com.training.entity;
 
 import java.io.Serializable;
+import java.util.Set;
 
 import com.training.domains.Address;
 
@@ -10,6 +11,25 @@ public class Doctor implements Serializable {
 	private long handPhone;
 	private Address resiAddress;
 	private Address hospitalAddress;
+	private ClinincalAssistant assistant;
+	private Set<Patient> patientList;
+	
+	
+	public Set<Patient> getPatientList() {
+		return patientList;
+	}
+
+	public void setPatientList(Set<Patient> patientList) {
+		this.patientList = patientList;
+	}
+
+	public ClinincalAssistant getAssistant() {
+		return assistant;
+	}
+
+	public void setAssistant(ClinincalAssistant assistant) {
+		this.assistant = assistant;
+	}
 
 	public Address getResiAddress() {
 		return resiAddress;
@@ -50,8 +70,6 @@ public class Doctor implements Serializable {
 	public void setHandPhone(long handPhone) {
 		this.handPhone = handPhone;
 	}
-
-	
 
 	@Override
 	public String toString() {

@@ -22,7 +22,7 @@ public class DoctorDAO implements MyDAO<Doctor>{
 	public DoctorDAO() {
 		super();
 
-		factory = HibernateUtils.getFactory();
+		factory = HiberUtils.getFactory();
 	}
 
 	@Override
@@ -85,15 +85,15 @@ public class DoctorDAO implements MyDAO<Doctor>{
 	}
 
 	@Override
-	public boolean delete(Doctor obj) {
+	public boolean delete(Serializable obj) {
 
 		Session session = factory.openSession();
 		Transaction tx = session.beginTransaction();
-		
+		Doctor doc=find(obj);
 		boolean result = true;
 		
 		try{
-			session.delete(obj);
+			session.delete(doc);
 		}catch(Exception e) {
 		
 			result = false;
@@ -106,5 +106,6 @@ public class DoctorDAO implements MyDAO<Doctor>{
 	public void destroy() {
 		factory.close();
 	}
+
 	
 }

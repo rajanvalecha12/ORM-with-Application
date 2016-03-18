@@ -3,19 +3,22 @@
 		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
 		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
-    <session-factory>
-        <property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
-        <property name="hibernate.connection.password">12monalisa34</property>
-        <property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
-        <property name="hibernate.connection.username">system</property>
-        <property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+	<session-factory>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.password">12monalisa34</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@localhost:1521:XE</property>
+		<property name="hibernate.connection.username">system</property>
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
         
         <!-- Option elements -->
-        <!-- Debugging and Understanding -->
-        <property name="show_sql">true</property>
-        <!--  to Autogenerate tables and update the same -->
-        <property name="hbm2ddl.auto">update</property>
-        <!--  Mandatory mapping document -->
-		<mapping resource="Doctor.hbm.xml"/>
-    </session-factory>
+		<!-- Debugging and Understanding -->
+		<property name="show_sql">true</property>
+		<!-- to Autogenerate tables and update the same -->
+		<property name="hbm2ddl.auto">update</property>
+		<!-- Mandatory mapping document -->
+		<mapping resource="Doctor.hbm.xml" />
+		<mapping resource="Patient.hbm.xml" />
+		<mapping resource="InPatient.hbm.xml" />
+		<mapping resource="ClinincalAssistant.hbm.xml" />
+	</session-factory>
 </hibernate-configuration>
